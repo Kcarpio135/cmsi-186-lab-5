@@ -16,14 +16,15 @@ public class PodRace {
         var winners = new HashSet<Pod>();
         for (var t = 0.0; t < timeLimit; t += timeSlice) {
             for (var pod : racers) {
-                var distanceForThisSlice = pod.distanceTraveled(0.0, timeLimit, timeSlice );
+                var distanceForThisSlice = pod.distanceTraveled(t, t + timeSlice , 1 );
                 distances.put(pod,distances.getOrDefault(pod, 0.0) + distanceForThisSlice);
                 if (distances.get(pod) >= distance) {
                     winners.add(pod);
                 }
-                
             }
-            break;
+            if (winners.isEmpty() != true){
+                return winners;
+            }
         }
         return winners;
     }

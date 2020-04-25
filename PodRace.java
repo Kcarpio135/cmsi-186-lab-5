@@ -12,7 +12,6 @@ public class PodRace {
         }
 
         var distances = new HashMap<Pod, Double>();
-
         var winners = new HashSet<Pod>();
         for (var t = 0.0; t < timeLimit; t += timeSlice) {
             for (var pod : racers) {

@@ -28,6 +28,5 @@ public class Pod {
             distance += v(t) * timePerSlice;
         }
         return distance;
-
     }
 }
